@@ -5,11 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hollywood's War System</title>
     <style>
-        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff; }
-        iframe { width: 100%; height: 100%; border: none; margin-top: 0px; }
+        /* จัดการหน้าจอรวมให้เต็มร้อย */
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #000000; /* เปลี่ยนเป็นสีดำให้เข้ากับระบบ */
+        }
+        
+        /* สั่ง iframe ให้เต็มจอ และเลื่อนขึ้นไปซ่อนหัวกระดาษ */
+        iframe { 
+            width: 100%; 
+            height: 100%; /* ตั้งค่าความสูงเต็มจอ */
+            border: none; 
+            display: block; /* แก้ปัญหาช่องว่าง */
+            margin-top: 0px; /* ไม่ต้องดันขอบบนแล้ว */
+        }
+
+        /* [สำคัญ] ส่วนนี้คือเวทมนตร์สำหรับซ่อนหัว Google Script */
+        /* เราใช้ selector นี้ไปซ่อนแถบหัวทั้งหมดที่สร้างโดย Google */
+        body > div:first-child > div[style*="height: 50px"] {
+            display: none !important;
+        }
+        
+        /* [สำคัญ] และปรับขนาดเนื้อหาหลักให้ขยายขึ้นมาแทนที่ */
+        body > div:first-child > div:last-child {
+            top: 0 !important;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbxDpeJ8vTUSa5CNgkkzXpiLvkVOV5BiaR3L-IlyV0DOun4K-fpQ8996lvfhGkAXI8/exec"></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfycbxDpeJ8vTUSa5CNgkkzXpiLvkVOV5BiaR3L-llyV0DOun4K-fPq8996lvfhGgKAxI8/exec"></iframe>
 </body>
 </html>
